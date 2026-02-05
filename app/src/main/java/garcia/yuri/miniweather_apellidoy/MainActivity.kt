@@ -1,5 +1,7 @@
 package garcia.yuri.miniweather_apellidoy
 
+import android.content.Intent
+import android.media.Image
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
@@ -8,7 +10,6 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import android.content.Intent
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,12 +37,32 @@ class MainActivity : AppCompatActivity() {
         tvCity.setText("Cd. Obregón")
         ivWeather.setImageResource(R.drawable.gd)
         tvTemperature.setText("30° C")
-        tvWeather.setText("Nublado")
+        tvWeather.setText("Clima...")
 
         btnCambiarActivity.setOnClickListener {
             val cambiarActivity = Intent(this, SecondActivity::class.java)
             cambiarActivity.putExtra("dato01",textoActivity2)
             startActivity(cambiarActivity)
+        }
+
+        btnCambioClima.setOnClickListener {
+            cambiarClima(tvWeather, ivWeather)
+        }
+
+    }
+
+    fun cambiarClima(tvWeather: TextView, ivWeather: ImageView){
+        val climas = listOf<String>("Soleado", "Nublado", "Lluviozo", "Nieve", "Tormentas", "Ventoso")
+        val clima = climas.random()
+
+        tvWeather.text = clima
+        when(clima){
+            "Soleado" -> ivWeather.setImageResource(R.drawable.ic_sunny)
+            "Nublado" -> ivWeather.setImageResource(R.drawable.ic_cloudy)
+            "Lluvioso" -> ivWeather.setImageResource(R.drawable.ic_rainy)
+            "Nieve" -> ivWeather.setImageResource(R.drawable.ic_snowy)
+            "Tormentas" -> ivWeather.setImageResource(R.drawable.ic_stormy)
+            "Ventoso" -> ivWeather.setImageResource(R.drawable.ic_windy)
         }
 
     }
