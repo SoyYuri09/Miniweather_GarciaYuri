@@ -71,14 +71,39 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="176dp"
-        android:layout_marginTop="51dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="177dp"
         android:fontFamily="sans-serif-condensed"
         android:text="TextView"
         android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.466"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvTemperature" />
+
+    <Button
+        android:id="@+id/btnCambiarActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="161dp"
+        android:text="Cambiar de actividad"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvWeather" />
+
+    <Button
+        android:id="@+id/btnCambioClima"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="33dp"
+        android:layout_marginEnd="161dp"
+        android:text="Cambiar Clima"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCambiarActivity" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
